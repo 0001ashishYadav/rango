@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-con">
+      <h2 class="hide" id="score&health">RANGO</h2>
+      <canvas
+        class="hide"
+        id="myCanvas"
+        height=""
+        width=""
+        style="border: 2px solid red; background-color: aqua"
+      >
+      </canvas>
+    </div>
+
+    <!-- character images -->
+
+    <div style="display: none">
+      <img id="up_hero" src="./assets/up_hero.png" />
+      <img id="down_hero" src="./assets/down_hero.png" />
+      <img id="left_hero" src="./assets/left_hero.png" />
+      <img id="right_hero" src="./assets/right_hero.png" />
+    </div>
+
+    <!-- game background music -->
+
+    <audio id="bg-mucic" loop>
+      <source
+        src="./assets/mixkit-drums-of-war-call-2780.wav"
+        type="audio/ogg"
+      />
+    </audio>
+
+    <!-- game over music -->
+
+    <audio id="gameOverMusic">
+      <source src="./assets/game-over-1.wav" type="audio/ogg" />
+    </audio>
+
+    <!-- enemy doun music -->
+
+    <audio id="enemyDownMusic">
+      <source
+        src="./assets/PUBG_MESSAGE_TONE__-_Enemy_Down_Message_Ringtone_sound_effect(256k).wav"
+        type="audio/ogg"
+      />
+    </audio>
+
+    <div id="popup">
+      <p class="hide">Game over</p>
+      <button id="startgameBtn">
+        <span class="strBtnClass">Start Game</span>
+      </button>
+      <button class="hide" id="RestartBtn">
+        <span class="restartBtnClass">Restart</span>
+      </button>
+    </div>
+
+    <div class="btn-popup">
+      <button id="pause&playBtn">Pause</button>
+    </div>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      .main-con {
+        text-align: center;
+      }
+
+      #popup {
+        position: absolute;
+        top: 200px;
+        height: 200px;
+        width: 30%;
+        background-image: linear-gradient(
+          rgba(255, 0, 0, 0.516),
+          rgba(0, 128, 0, 0.473)
+        );
+        /* border: 2px solid red; */
+        border-radius: 24px;
+        text-align: center;
+        padding-top: 75px;
+      }
+
+      #startgameBtn {
+        height: 50px;
+        width: 130px;
+        color: white;
+        background-color: rgb(46, 186, 46);
+        border-radius: 30px;
+        border: 4px solid white;
+      }
+
+      #RestartBtn {
+        height: 50px;
+        width: 130px;
+        color: white;
+        background-color: rgb(186, 37, 37);
+        border-radius: 30px;
+        border: 4px solid white;
+      }
+
+      .strBtnClass {
+        font-size: 20px;
+        text-shadow: 4px 4px 10px red, -4px -4px 20px orange;
+      }
+
+      .restartBtnClass {
+        font-size: 20px;
+        text-shadow: 4px 4px 10px red, -4px -4px 20px orange;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .btn-popup {
+        position: absolute;
+        bottom: 120px;
+      }
+    </style>
+
+    <script src="rango.js"></script>
+  </body>
+</html>
